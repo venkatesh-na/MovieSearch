@@ -10,7 +10,7 @@ const Detail = ({match})=>{
         setLoading(true)
         try
         {
-        const response = await fetch(`http://www.omdbapi.com/?i=${match.params.id}&apikey=30cb0b35`)
+        const response = await fetch(`https://www.omdbapi.com/?i=${match.params.id}&apikey=30cb0b35`)
         const data = await response.json()
         setLoading(false)
         setDetailData([data])
