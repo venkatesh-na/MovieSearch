@@ -7,14 +7,14 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path = "/">
+        <Route exact path = {process.env.PUBLIC_URL + `/`}>
           <main>
                 <h1 className = "heading">Movies Search</h1>
                 <Form/>
                 <Movies/>
           </main>
         </Route>
-        <Route path = "/detail/:id" component = {Detail}/>
+        <Route path = {process.env.PUBLIC_URL + `/detail/:id`} component = {Detail}/>
       </Switch>
     </Router>
   );
