@@ -2,10 +2,10 @@ import Form from "./componets/Form"
 import Movies from "./componets/Movies"
 import Detail from "./componets/Detail";
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 function App() {
   return (
-    <Router>
+    <Router basename = {process.env.PUBLIC_URL}>
       <Switch>
         <Route exact path = "/">
           <main>

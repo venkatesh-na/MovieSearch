@@ -55,7 +55,7 @@ const Detail = ({match})=>{
                                 <h1>{Title}</h1>
                                 <p className = "type">Type: {Type}</p>
                                 <p className = "release">Release date: {Released}</p>
-                                <p className = "rating">
+                                <div className = "rating">
                                     Rating : 
                                     <div className = "star-container">
                                     {starArray.map((e)=>{
@@ -70,7 +70,7 @@ const Detail = ({match})=>{
                                         )}
                                         </div>
                                     <span>{imdbRating}/10</span>
-                                    </p>
+                                </div>
                             </div>
                         </article>
                         <article className = "detail-info-container">
