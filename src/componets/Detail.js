@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react"
 import {Link} from "react-router-dom"
+import { FaStar } from "react-icons/fa"
 import { useGlobalContext } from "./Context"
 import Loading from "./Loading"
 const Detail = ({match})=>{
@@ -35,6 +36,17 @@ const Detail = ({match})=>{
             {detailData.map((item,index)=>{
                 const {Title,Released,Genre,Director,Writer,Actors,Plot,Poster,imdbRating,imdbID,Type,totalSeasons} = item
                 const GenreArray = Genre.split(",")
+                const h = imdbRating/2;
+                let starArray = []
+                for(let i = 1; i<=parseInt(h); i++)
+                {
+                    starArray.push(i)
+                    if(i == parseInt(h))
+                    {
+                        starArray.push(h)
+                    }
+                }
+                console.log(starArray)
                 return (
                     <section key = {imdbID}>
                         <article className = "detail-image-container">
@@ -43,7 +55,22 @@ const Detail = ({match})=>{
                                 <h1>{Title}</h1>
                                 <p className = "type">Type: {Type}</p>
                                 <p className = "release">Release date: {Released}</p>
-                                <p className = "rating">Rating : {imdbRating}/10</p>
+                                <p className = "rating">
+                                    Rating : 
+                                    <div className = "star-container">
+                                    {starArray.map((e)=>{
+                                        let number = e
+                                        return (
+                                            <div style = {{display:"inline-block"}}>
+                                            <p style = {{width:number.toString().length > 2 ? `${(e/5)*100}%` : ""}}>
+                                                <FaStar className = "star"/>
+                                            </p>
+                                            </div>
+                                        )}
+                                        )}
+                                        </div>
+                                    <span>{imdbRating}/10</span>
+                                    </p>
                             </div>
                         </article>
                         <article className = "detail-info-container">

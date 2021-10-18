@@ -7,10 +7,6 @@ const Form = ()=>{
                 <form>
                     <input value = {text} onChange = {(e)=>setText(e.target.value)} type = "text" placeholder = "Search for Movies"/>
                 </form>
-                <div className = "btn-container">
-                    <button>Movie</button>
-                    <button>Series</button>
-                </div>
             </section>
     )
 }

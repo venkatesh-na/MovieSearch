@@ -52,20 +52,43 @@
     rgba(255, 255, 255, 0),
     rgb(8, 8, 10)
   );
-  padding: 0 10px;
+}
+.star {
+  fill: rgb(255, 232, 98);
 }
 .detail-image-container > div h1 {
   color: white;
   font-size: 3rem;
+  padding-left: 10px;
 }
-.detail-image-container > div p {
+.detail-image-container > div .type,
+.release,
+.rating {
   margin: 5px;
   color: rgb(179, 179, 179);
+  padding-left: 10px;
 }
 .detail-image-container > div .rating {
   color: rgb(255, 232, 98);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
-
+.detail-image-container > div .rating p {
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+.star-container {
+  display: flex;
+  justify-content: space-between;
+  width: 80px;
+  margin: 10px;
+}
+.detail-image-container span {
+  color: rgb(255, 232, 98);
+  font-size: 1.2rem;
+}
 .detail-info-container {
   width: 600px;
   height: 100%;
@@ -274,7 +297,9 @@ form input {
     height: 550px;
   }
   .detail-image-container > div h1,
-  p {
+  .type,
+  .release,
+  .rating {
     padding-left: 10px;
   }
   .detail-info-container {
