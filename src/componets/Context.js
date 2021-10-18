@@ -10,7 +10,7 @@ const AppProvider = ({children})=>{
         setLoading(true)
         try
         {
-            const response = await fetch(`http://www.omdbapi.com/?s=${text}&apikey=30cb0b35&`)
+            const response = await fetch(`https://www.omdbapi.com/?s=${text}&apikey=30cb0b35&`)
             const data = await response.json()
             const {Search} = data
             if(Search == undefined)
